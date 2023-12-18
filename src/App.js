@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import UserList from './UserList';
+import { TbStars } from "react-icons/tb";
+import { motion } from "framer-motion"
+
+//root component
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <motion.h1 whileHover={{ scale: 1.7 }}><TbStars />  LIST OF USERS <TbStars /></motion.h1>
+  <UserList/>
     </div>
   );
 }
