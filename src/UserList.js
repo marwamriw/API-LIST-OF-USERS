@@ -12,7 +12,7 @@ const UserList = () => {
         axios.get("https://jsonplaceholder.typicode.com/users").then((response)=>{
             setUsers(response.data)
         }).catch(err => setError(err))
-    })
+    },[])
 
     //  add a data from the api in the card
     return (
@@ -25,11 +25,12 @@ const UserList = () => {
             <p className="tittle">{user.username}</p>
         </div>
         <div className="flip-card-back">
-            <p ><span>ID :</span>  {user.id}</p>
             <p ><span>E-MAIL :</span>  {user.email}</p>
             <p><span>STREET : </span> {user.address.street}</p>
             <p><span>CITY :</span> {user.address.city}</p>
-            <p><span>ZIP CODE:</span> {user.address.zipcode}</p>
+            <p><span>ZIP CODE :</span> {user.address.zipcode}</p>
+            <p><span>GEO-LAT :</span> {user.address.geo.lat}</p>
+            <p><span>GEO-ING :</span> {user.address.geo.lng}</p>
             <p><span>PHONE :</span> {user.phone}</p>
             <p><span>WEBSITE :</span> {user.website}</p>
             <p><span>NAME-COMPANY :</span> {user.company.name}</p>
